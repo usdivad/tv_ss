@@ -1,0 +1,50 @@
+<!--GLOBALS - all pages-->
+
+<!--Footer-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>
+    var $tv = jQuery.noConflict();
+
+    /*Header rid extra text*/
+    var catchphrase = "Score composer based in Brooklyn, NY";
+    var subtitleElm = $tv(".site-city-state");
+    subtitleElm.text(catchphrase);
+    subtitleElm.width(500);
+    subtitleElm.css("text-align", "left");
+    $tv(".site-city-state")
+    $tv(".site-address").css("visibility", "hidden");
+    $tv(".site-phone").css("visibility", "hidden");
+
+
+    /*Link folder nav to index pages*/
+    var label_video = "Video";
+    var label_audio = "Audio";
+    var link_video = "/video";
+    var link_audio = "/audio";
+    console.log("http://dancesmusic.com/");
+
+    var folders = $tv(".folder-collection");
+    for (var i=0; i<folders.length; i++) {
+        var navList = folders[i].children;
+        for (var j=0; j<navList.length; j++) {
+            var link = navList[j];
+            if (equalsIgnoreCase(link.tagName, "a")) {
+                if (equalsIgnoreCase(link.text, label_video)) {
+                    link.onclick = function() {
+                        window.location.href = link_video;
+                    }
+                }
+                else if (equalsIgnoreCase(link.text, label_audio)) {
+                   link.onclick = function() {
+                        window.location.href = link_audio;
+                    }
+                }
+            }
+        }
+    }
+
+    //prototype this
+    function equalsIgnoreCase(x, y) {
+        return x.toUpperCase() === y.toUpperCase();
+    }
+</script>
