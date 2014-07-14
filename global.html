@@ -24,9 +24,9 @@
     
     /*Link folder nav to index pages*/
     var label_video = "Music In Video";
-    var label_audio = "Personal Work";
+    var label_personal = "Personal Work";
     var link_video = "/video";
-    var link_audio = "http://dancesmusic.com/";
+    var link_personal = "/dances";
     console.log("Trevor Vaz");
 
     var folders = $tv(".folder-collection");
@@ -40,9 +40,9 @@
                         window.location.href = link_video;
                     }
                 }
-                else if (equalsIgnoreCase(link.text, label_audio)) {
+                else if (equalsIgnoreCase(link.text, label_personal)) {
                    link.onclick = function() {
-                        window.location.href = link_audio;
+                        window.location.href = link_personal;
                     }
                 }
             }
