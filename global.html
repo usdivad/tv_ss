@@ -4,24 +4,30 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script>
     var $tv = jQuery.noConflict();
-
+  
     /*Header rid extra text*/
-    var catchphrase = "Score composer based in Brooklyn, NY";
+  /*var catchphrase = "Score composer";
     var subtitleElm = $tv(".site-city-state");
     subtitleElm.text(catchphrase);
     subtitleElm.width(500);
-    subtitleElm.css("text-align", "left");
-    $tv(".site-city-state")
+    subtitleElm.css("text-align", "center");
+    $tv(".site-city-state")*/
     $tv(".site-address").css("visibility", "hidden");
     $tv(".site-phone").css("visibility", "hidden");
 
+    //Hide Squarespace
+    $tv("#footer p").text("")
 
+    /*Video underlining*/
+    $tv("#topNav .folder-collection").addClass("page-collection");
+  //$tv("#topNav .page-collection").removeClass("folder-collection");
+    
     /*Link folder nav to index pages*/
-    var label_video = "Video";
-    var label_audio = "Audio";
+    var label_video = "Music In Video";
+    var label_audio = "Personal Work";
     var link_video = "/video";
     var link_audio = "/audio";
-    console.log("http://dancesmusic.com/");
+    console.log("Trevor Vaz");
 
     var folders = $tv(".folder-collection");
     for (var i=0; i<folders.length; i++) {
@@ -43,7 +49,6 @@
         }
     }
 
-    //prototype this
     function equalsIgnoreCase(x, y) {
         return x.toUpperCase() === y.toUpperCase();
     }
